@@ -12,3 +12,13 @@
 .students table tr {
   vertical-align: middle;
 }
+
+.student-data {
+  text-align: center;
+}
+.student-data img {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  object-fit: cover;
+}
