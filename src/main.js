@@ -70,6 +70,9 @@ student_create_form.onsubmit = (e) => {
     });
 
     msg.innerHTML = createAlert("Student Data Created", "success");
+
     e.target.reset();
+
+    getAllStudents();
   }
 };
