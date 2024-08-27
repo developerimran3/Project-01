@@ -11,7 +11,7 @@ const getAllStudents = () => {
   if (students) {
     students.forEach((item, index) => {
       dataList += `<tr>
-                      <td>1</td>
+                      <td>${index + 1}</td>
                       <td>
                         <img src="${item.photo}" alt="" />
                       </td>
@@ -19,6 +19,7 @@ const getAllStudents = () => {
                       <td>${item.email}</td>
                       <td>${item.phone}</td>
                       <td>${item.location}</td>
+                      <td>${timeAgo(item.createdAt)}</td>
                       <td>
                         <button
                           class="btn btn-sm btn-info"
@@ -38,7 +39,7 @@ const getAllStudents = () => {
     });
   } else {
     dataList = `<tr>
-                    <td>No Data Found</td>
+                    <td colspan="7" class="text-center text-danger" >No Data Found</td>
                </tr>`;
   }
 
