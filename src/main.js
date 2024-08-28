@@ -1,6 +1,7 @@
 const student_create_form = document.getElementById("student-create");
 const studentList = document.getElementById("student-deta-list");
 const msg = document.querySelector(".msg");
+const singalStudentData = document.querySelector(".student-data");
 
 // Student Show form............
 const getAllStudents = () => {
@@ -25,13 +26,16 @@ const getAllStudents = () => {
                           class="btn btn-sm btn-info"
                           data-bs-toggle="modal"
                           data-bs-target="#student-show"
+                          onclick="showSingalStudent('${item.id}')"
                         >
                           <i class="fa fa-eye"></i>
                         </button>
                         <button class="btn btn-sm btn-warning">
                           <i class="fa fa-edit"></i>
                         </button>
-                        <button class="btn btn-sm btn-danger">
+                        <button class="btn btn-sm btn-danger" onclick="deleteStudens('${
+                          item.id
+                        }')">
                           <i class="fa fa-trash"></i>
                         </button>
                       </td>
@@ -45,8 +49,30 @@ const getAllStudents = () => {
 
   studentList.innerHTML = dataList;
 };
-getAllStudents();
 
+const deleteStudens = (id) => {
+  const conf = confirm("are You Suer");
+
+  if (conf) {
+    deleteSingleData("students", id);
+    getAllStudents();
+  }
+};
+
+const showSingalStudent = (id) => {
+  const { name, email, phone, location, photo } = getSignalData("students", id);
+
+  singalStudentData.innerHTML = `<img
+                src="${photo}"
+                alt=""
+              />
+              <h2>${name}</h2>
+              <p>${email}</p>
+              <p>${phone}</p>
+              <p>${location}</p>
+              `;
+};
+getAllStudents();
 //Now Submit Create student Form........
 student_create_form.onsubmit = (e) => {
   e.preventDefault();
@@ -61,7 +87,7 @@ student_create_form.onsubmit = (e) => {
     msg.innerHTML = createAlert("Invalid Mobile Nubmer", "warning");
   } else {
     sendDataLS("students", {
-      ID: createID(),
+      id: createID(),
       name,
       email,
       phone,
