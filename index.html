@@ -18,128 +18,13 @@
     />
   </head>
   <body>
-    <!-- ........Student Create Modal.......... -->
-    <div class="students">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-12">
-            <button
-              class="btn btn-primary createbtn"
-              data-bs-toggle="modal"
-              data-bs-target="#student-create"
-            >
-              Create New Students
-            </button>
-            <br />
-            <br />
-            <div class="card shadow">
-              <div class="card-header">
-                <h2>All Students Data</h2>
-              </div>
-              <div class="card-body">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Photo</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Location</th>
-                      <th>Created At</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody id="student-deta-list"></tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="edu-wraper">
+      <div class="edu-container shadow-sm">
+        <div class="edu-header"></div>
+        <div class="edu-body"></div>
+        <div class="edu-footer"></div>
       </div>
     </div>
-
-    <!-- ........Student Create Modal. Form......... -->
-    <div class="modal fade" id="student-create">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2>Create New Students</h2>
-            <button class="btn-close btns" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <div class="msg"></div>
-            <form id="student-create-form">
-              <div class="my-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Name"
-                  name="name"
-                />
-              </div>
-              <div class="my-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Email"
-                  name="email"
-                />
-              </div>
-              <div class="my-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Phone"
-                  name="phone"
-                />
-              </div>
-              <div class="my-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Location"
-                  name="location"
-                />
-              </div>
-              <div class="my-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Photo"
-                  name="photo"
-                />
-              </div>
-              <div class="my-3">
-                <button type="submit" class="btn btn-primary">Create</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ........Student Show Modal.......... -->
-    <div class="modal fade" id="student-show">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <div class="student-data">
-              <img
-                src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png"
-                alt=""
-              />
-              <h2>Imran Hosen</h2>
-              <p>Dhaka</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- ......ALl JS File Link......... -->
     <script src="/src/data.js"></script>
     <script src="/src/functions.js"></script>

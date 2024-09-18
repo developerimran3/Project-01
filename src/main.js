@@ -51,7 +51,7 @@ const getAllStudents = () => {
 };
 
 const deleteStudens = (id) => {
-  const conf = confirm("are You Suer");
+  const conf = confirm("Are You suer?");
 
   if (conf) {
     deleteSingleData("students", id);
